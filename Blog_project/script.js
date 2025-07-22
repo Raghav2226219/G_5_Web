@@ -36,3 +36,19 @@ const blogsData = [
     }
 
     renderBlogs(blogsData);
+
+
+    const searchInput = document.getElementById("searchInput");
+    let debounceTimeout;
+
+    searchInput.addEventListener("input", () => {
+      clearTimeout(debounceTimeout);
+      debounceTimeout = setTimeout(() => {
+        const query = searchInput.value.toLowerCase();
+        const filtered = blogsData.filter(blog =>
+          blog.title.toLowerCase().includes(query) ||
+          blog.author.toLowerCase().includes(query)
+        );
+        renderBlogs(filtered);
+      }, 500);
+    });
