@@ -7,14 +7,14 @@ const userRoute = require("./routes/userRoute");
 // Instances
 const app = express();
 
+// Routes
+app.use("/api/user", userRoute);
 // Variables
 
 const PORT = process.env.PORT || 4500;
 const DATABASE_URL = process.env.DATABASE_URL;
 const DATABASE_NAME = process.env.DATABASE_NAME;
 
-// Routes
-app.use("/api/user", userRoute);
 
 
 
