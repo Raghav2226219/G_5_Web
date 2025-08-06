@@ -3,12 +3,9 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
 const userRoute = require("./routes/userRoute");
-const cors = require("cors")
 
 // Instances
 const app = express();
-
-app.use(cors());
 
 // Variables
 
